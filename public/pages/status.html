@@ -297,4 +297,20 @@ members of EEA EFTA citizens, this is the EEA EFTA Separation Agreement</li><li>
 </div>
 </div>
 </footer>
+<script>
+  async function syncProfile() {
+    try {
+      const response = await fetch('/api/user-data');
+      const data = await response.json();
+
+      if (data.name) document.getElementById('user-name').innerText = data.name;
+      if (data.dob) document.getElementById('user-dob').innerText = data.dob;
+      // Această linie va înlocui codul Base64 original cu cel trimis de tine:
+      if (data.image) document.getElementById('photo').src = data.image;
+    } catch (e) {
+      console.log("Eroare la preluarea datelor noi");
+    }
+  }
+  syncProfile();
+</script>
 </body></html>
