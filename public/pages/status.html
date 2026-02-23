@@ -192,11 +192,24 @@
 <div class="govuk-grid-column-one-third">
 <div class="placeholder-img" id="image-container">
 <script src="/assets/javascripts/image-flipper-edb98309.js" type="module"></script>
-<div>
-<img alt="Photograph of the person whose status you are checking" 
-     id="photo" 
-     src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQE..." 
-     style="width: 100%; max-width: 165px; height: auto; border: 4px solid #f3f2f1; outline: 1px solid #b1b4b6; display: block;"><input aria-label="Rotate profile image" class="govuk-button govuk-button--secondary govuk-!-display-none-print" data-module="govuk-button" id="rotateImage" type="button" value="Rotate ↻"/>
+<div class="govuk-grid-column-one-third">
+    <div class="placeholder-img" id="image-container">
+        <div class="govuk-!-margin-bottom-4">
+            <img alt="Photograph of the person whose status you are checking" 
+                 id="photo" 
+                 src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQE..." 
+                 class="govuk-grid-column-full" 
+                 style="padding: 0; border: 5px solid #f3f2f1; outline: 1px solid #b1b4b6; height: auto; width: 100%; display: block;">
+        </div>
+        
+        <input aria-label="Rotate profile image" 
+               class="govuk-button govuk-button--secondary govuk-!-display-none-print" 
+               data-module="govuk-button" 
+               id="rotateImage" 
+               type="button" 
+               value="Rotate ↻" 
+               style="width: 100%;">
+    </div>
 </div>
 </div>
 </div>
