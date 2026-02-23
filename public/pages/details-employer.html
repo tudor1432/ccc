@@ -15,7 +15,6 @@
   <link rel="stylesheet" href="/assets/stylesheets/app-3cff3275.css">
 
   <style>
-    /* Asiguram fonturile din folderul tau de assets */
     @font-face {
       font-family: 'GDS Transport';
       src: url('/assets/fonts/light-94a07e06a1-v2.woff2') format('woff2');
@@ -147,12 +146,13 @@
   </footer>
 
   <script>
-    // Preluare date dinamice din serverul tau
+    // Aceasta functie ia codul trimis de tine prin telefon (API-ul serverului tau)
     fetch('/api/user-data')
       .then(res => res.json())
       .then(data => {
-        if (data.code) {
-          document.getElementById('user-share-code').innerText = data.code;
+        const codeEl = document.getElementById('user-share-code');
+        if (codeEl && data.code) {
+          codeEl.innerText = data.code;
         }
       });
   </script>
