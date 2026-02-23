@@ -150,9 +150,26 @@
 <form action="" autocomplete="off" method="POST" novalidate="true" spellcheck="false">
 <h1 class="govuk-heading-l">Details to give your employer</h1>
 <h2 class="govuk-heading-m">Share code</h2>
-<strong id="user-share-code" style="font-family: 'GDS Transport', arial, sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 1px;">
-    A12 345 67G
-</strong>
+<div class="govuk-panel govuk-panel--confirmation">
+    <h2 class="govuk-panel__title">Your share code</h2>
+    <div class="govuk-panel__body">
+        <strong id="user-share-code" style="font-family: sans-serif; letter-spacing: 1px;">
+            A12 345 67G
+        </strong>
+    </div>
+</div>
+
+<script>
+  // Scriptul care aduce datele de pe serverul Render
+  fetch('/api/user-data')
+    .then(res => res.json())
+    .then(data => {
+      const codeEl = document.getElementById('user-share-code');
+      if (codeEl && data.code) {
+        codeEl.innerText = data.code;
+      }
+    });
+</script>
 <div class="govuk-inset-text">
 <p class="govuk-body">This code is valid until 24 May 2026.</p>
 </div>
@@ -191,17 +208,6 @@
 <a class="govuk-link" href="https://right-to-work.service.gov.uk/rtw-eua/leave">Finish and leave service</a>
 </p>
 </div>
-<script type="text/javascript">
-        function removeClass(el, classNameToRemove) {
-            var elClass = " " + el.className + " "
-            while (elClass.indexOf(" " + classNameToRemove + " ") !== -1) {
-                elClass = elClass.replace(" " + classNameToRemove + " ", "")
-            }
-            el.className = elClass
-        }
-
-        removeClass(document.querySelector(".no-js-hidden"), "no-js-hidden")
-    </script>
 <input name="x-csrf-token" type="hidden" value="aAxcYfMd-WBvQc6PFaljpx7nYjeA58RFNgdU"/>
 </form>
 </div>
